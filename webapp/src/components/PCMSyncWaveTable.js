@@ -1,9 +1,13 @@
 import React from "react";
+import createPersistedState from "use-persisted-state";
 
 import MUIDataTable from "mui-datatables";
 
 const datas = require("../datas.json");
 const data = datas.filter((x) => x.type === "PCM-Sync Wave");
+
+const useRowsPerPage = createPersistedState("pcmWaveSyncTableRowsPerPage");
+const useSearch = createPersistedState("pcmWaveSyncSearch");
 
 const columns = [
   {
@@ -24,26 +28,31 @@ const columns = [
   },
 ];
 
-
-const options = {
-  filterType: "multiselect",
-  download: false,
-  expandableRows: false,
-  expandableRowsHeader: false,
-  selectableRows: "none",
-  searchOpen: true,
-  rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
-  rowsPerPage: 15,
-};
-
 export default function Table() {
-    return (
-      <MUIDataTable
-        title={"PCM-Sync Wave List"}
-        data={data}
-        columns={columns}
-        options={options}
-      />
-    );
-}
+  const [rowsPerPage, setRowsPerPage] = useRowsPerPage(15);
+  const [search, setSearch] = useSearch("");
 
+  const options = {
+    filterType: "multiselect",
+    filter:false,
+    download: false,
+    expandableRows: false,
+    expandableRowsHeader: false,
+    selectableRows: "none",
+    searchOpen: true,
+    rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
+    rowsPerPage,
+    searchText: search,
+    onChangeRowsPerPage: setRowsPerPage,
+    onSearchChange: setSearch,
+  };
+
+  return (
+    <MUIDataTable
+      title={"PCM-Sync Wave List"}
+      data={data}
+      columns={columns}
+      options={options}
+    />
+  );
+}
