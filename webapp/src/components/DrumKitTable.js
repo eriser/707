@@ -59,6 +59,8 @@ export default function Table() {
     rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
     rowsPerPage,
     searchText: search,
+    tableBodyMaxHeight: "800px",
+    fixedHeader: true,
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
     onFilterChange,
