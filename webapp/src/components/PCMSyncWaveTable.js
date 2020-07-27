@@ -3,7 +3,7 @@ import React from "react";
 import MUIDataTable from "mui-datatables";
 
 const datas = require("../datas.json");
-const data = datas.filter((x) => x.type == "PCM-Sync Wave");
+const data = datas.filter((x) => x.type === "PCM-Sync Wave");
 
 const columns = [
   {

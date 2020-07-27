@@ -1,14 +1,11 @@
-import React from 'react';
-import {
-  AppBar,
-  Toolbar} from "@material-ui/core";
+import React from "react";
+import { AppBar, Toolbar } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import ToneTable from './components/ToneTable'
+import ToneTable from "./components/ToneTable";
 import DrumKitTable from "./components/DrumKitTable";
 import DrumInstTable from "./components/DrumInstTable";
 import PCMWaveTable from "./components/PCMWaveTable";
@@ -33,7 +30,6 @@ function TabPanel(props) {
     </div>
   );
 }
-
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -69,10 +65,10 @@ function App() {
         <DrumInstTable />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <PCMWaveTable/>
+        <PCMWaveTable />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <PCMSyncWaveTable/>
+        <PCMSyncWaveTable />
       </TabPanel>
     </div>
   );
