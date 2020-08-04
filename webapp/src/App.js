@@ -23,8 +23,8 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
+        <Box p={1}>
+          {children}
         </Box>
       )}
     </div>
@@ -41,11 +41,6 @@ function App() {
   return (
     <div>
       <AppBar color="primary" position="static">
-        <Toolbar>
-          <Typography variant="title" color="inherit">
-            MC-707 Sound List
-          </Typography>
-        </Toolbar>
         <Tabs centered value={value} onChange={handleChange}>
           <Tab label="Tone" />
           <Tab label="Drum Kit" />

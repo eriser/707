@@ -11,7 +11,7 @@ const useSearch = createPersistedState("toneSearch");
 const useFilter = createPersistedState("toneFilter");
 
 export default function Table() {
-  const [rowsPerPage, setRowsPerPage] = useRowsPerPage(15);
+  const [rowsPerPage, setRowsPerPage] = useRowsPerPage(10);
   const [search, setSearch] = useSearch("");
   const [filter, setFilter] = useFilter([[], []]);
 
@@ -65,12 +65,12 @@ export default function Table() {
     expandableRows: false,
     expandableRowsHeader: false,
     selectableRows: "none",
-    searchOpen: true,
     rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
     rowsPerPage,
     searchText: search,
-    tableBodyMaxHeight: "800px",
-    fixedHeader: true,
+    tableBodyHeight:"auto",
+    tableBodyMaxHeight: "400px",
+    responsive: "standard",
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
     onFilterChange,

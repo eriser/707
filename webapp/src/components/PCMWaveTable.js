@@ -11,7 +11,7 @@ const useSearch = createPersistedState("pcmWaveTableSearch");
 const useFilter = createPersistedState("pcmWaveTableFilter");
 
 export default function Table() {
-  const [rowsPerPage, setRowsPerPage] = useRowsPerPage(15);
+  const [rowsPerPage, setRowsPerPage] = useRowsPerPage(10);
   const [search, setSearch] = useSearch("");
   const [filter, setFilter] = useFilter([[], []]);
 
@@ -54,7 +54,6 @@ export default function Table() {
     expandableRows: false,
     expandableRowsHeader: false,
     selectableRows: "none",
-    searchOpen: true,
     rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
     rowsPerPage,
     searchText: search,
