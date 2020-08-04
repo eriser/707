@@ -69,7 +69,7 @@ export default function Table() {
     rowsPerPage,
     searchText: search,
     tableBodyHeight:"auto",
-    tableBodyMaxHeight: "400px",
+    tableBodyMaxHeight: "500px",
     responsive: "standard",
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
