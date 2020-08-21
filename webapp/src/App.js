@@ -1,9 +1,8 @@
 import React from "react";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
 
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import ToneTable from "./components/ToneTable";
 import DrumKitTable from "./components/DrumKitTable";
