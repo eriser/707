@@ -1,7 +1,7 @@
 import React from "react";
 import createPersistedState from "use-persisted-state";
-
 import MUIDataTable from "mui-datatables";
+import Options from "./Options";
 
 const datas = require("../datas.json");
 const data = datas.filter((x) => x.type === "Tone");
@@ -59,18 +59,9 @@ export default function Table() {
   };
 
   const options = {
-    filterType: "multiselect",
-    fixedHeader: true,
-    download: false,
-    expandableRows: false,
-    expandableRowsHeader: false,
-    selectableRows: "none",
-    rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
+    ...Options,
     rowsPerPage,
     searchText: search,
-    tableBodyHeight:"auto",
-    tableBodyMaxHeight: "500px",
-    responsive: "standard",
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
     onFilterChange,

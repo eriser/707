@@ -1,6 +1,6 @@
 import React from "react";
 import createPersistedState from "use-persisted-state";
-
+import Options from "./Options";
 import MUIDataTable from "mui-datatables";
 
 const datas = require("../datas.json");
@@ -44,23 +44,14 @@ export default function Table() {
     },
   ];
 
-   const onFilterChange = (changedColumn, filterList) => {
-     setFilter(JSON.stringify(filterList));
-   };
+  const onFilterChange = (changedColumn, filterList) => {
+    setFilter(JSON.stringify(filterList));
+  };
 
   const options = {
-    filterType: "multiselect",
-    download: false,
-    expandableRows: false,
-    expandableRowsHeader: false,
-    selectableRows: "none",
-    rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
+    ...Options,
     rowsPerPage,
     searchText: search,
-    tableBodyHeight: "auto",
-    tableBodyMaxHeight: "500px",
-    responsive: "standard",
-    fixedHeader: true,
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
     onFilterChange,

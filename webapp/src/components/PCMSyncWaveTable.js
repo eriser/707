@@ -1,5 +1,6 @@
 import React from "react";
 import createPersistedState from "use-persisted-state";
+import Options from "./Options";
 
 import MUIDataTable from "mui-datatables";
 
@@ -33,19 +34,10 @@ export default function Table() {
   const [search, setSearch] = useSearch("");
 
   const options = {
-    filterType: "multiselect",
-    filter: false,
-    download: false,
-    expandableRows: false,
-    expandableRowsHeader: false,
-    selectableRows: "none",
-    rowsPerPageOptions: [10, 15, 25, 50, 100, 200],
+    ...Options,
+    filterType: "none",
     rowsPerPage,
     searchText: search,
-    tableBodyHeight: "auto",
-    tableBodyMaxHeight: "500px",
-    responsive: "standard",
-    fixedHeader: true,
     onChangeRowsPerPage: setRowsPerPage,
     onSearchChange: setSearch,
   };
