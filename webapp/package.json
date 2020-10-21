@@ -12,7 +12,7 @@
     "mui-datatables": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "use-persisted-state": "^0.3.0"
   },
   "scripts": {
